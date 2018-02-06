@@ -8,6 +8,14 @@
     include_sub_features=yes
     state=present
 
+- name: 
+  win_domain:
+    dns_domain_name: "{{ dns }}"
+    safe_mode_password: "{{ modepass }}"
+
+- name: 
+  win_reboot:
+
 - name: Sets up the AD controller 
   win_domain_controller:
     dns_domain_name: "{{ dns }}"
@@ -15,11 +23,13 @@
     domain_admin_password: "{{ adminpass }}"
     safe_mode_password: "{{ modepass }}"
     state: domain_controller
+  register: ad_controller
 
 - name: reboot when required
   win_reboot: 
-  when: update_result.reboot_required
+  when: ad_controller['reboot_required']
 
-  shell: nltest /dclist:"{{ ad_domain_name }}"
+- name: List out domains 
+  win_shell: "nltest /dclist:{{ dns }}"
 
 

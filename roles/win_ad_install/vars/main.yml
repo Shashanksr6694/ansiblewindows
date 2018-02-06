@@ -2,6 +2,6 @@
 # vars file for win_ad_install
 
 dns: ad1.a2cb.example.opentlc.com
-adminuser: admin@ad1.a2cb.example.opentlc.com
-adminpass: jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg== 
-modepass: jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==
+adminuser: "admin@ad1.a2cb.example.opentlc.com"
+adminpass: "jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg==" 
+modepass: "jVMijRwLbI02gFCo2xkjlZ9lxEA7bm7zgg=="

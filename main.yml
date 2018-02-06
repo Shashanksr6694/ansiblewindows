@@ -1,0 +1,4 @@
+---
+- hosts: windows
+  roles: 
+    - {name: win_ad_install}
